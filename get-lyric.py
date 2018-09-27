@@ -77,7 +77,7 @@ def main():
         song_url = remote_song_info['result']['url']
         lyrics = scrap_song_url(song_url)
 
-        write_lyrics_to_file(lyrics, song_title, artist_name)
+        #write_lyrics_to_file(lyrics, song_title, artist_name)
 
         print(lyrics)
     else:
