@@ -28,7 +28,7 @@ def get_current_song_info():
 
     return {'artist': metadata['xesam:artist'][0], 'title': metadata['xesam:title']}
 
-def request_song_info(song_title, artist_name):
+def request_song_info(artist_name, song_title):
     base_url = defaults['request']['base_url']
     headers = {'Authorization': 'Bearer ' + defaults['request']['token']}
     search_url = base_url + '/search'
@@ -55,7 +55,7 @@ def main():
     elif args_length == 3:
         # Use input as song title and artist name
         song_info = sys.argv
-        song_title, artist_name = song_info[1], song_info[2]
+        artist_name, song_title = song_info[1], song_info[2]
     else:
         print(defaults['message']['wrong_input'])
         return
@@ -63,7 +63,7 @@ def main():
     print('{} by {}'.format(song_title, artist_name))
 
     # Search for matches in request response
-    response = request_song_info(song_title, artist_name)
+    response = request_song_info(artist_name, song_title)
     json = response.json()
     remote_song_info = None
 

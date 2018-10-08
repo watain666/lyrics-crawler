@@ -10,4 +10,4 @@ like this `TOKEN='YOUR_GENIUS_API_TOKEN'`.
 `python3 get-lyric.py`
 
 ### Custom search
-`python3 get-lyric.py [song_title] [artist_name]`
+`python3 get-lyric.py [artist_name] [song_title]`
