@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# coding: utf-8
+
 import sys, dbus, requests
 from bs4 import BeautifulSoup
 from constants import (
@@ -61,6 +64,7 @@ def main():
         return
 
     print('{} by {}'.format(song_title, artist_name))
+    song_title = song_title.split(' - ')[0]
 
     # Search for matches in request response
     response = request_song_info(artist_name, song_title)
